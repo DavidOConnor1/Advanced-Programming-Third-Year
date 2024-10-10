@@ -27,6 +27,7 @@ public class HttpURLConnection_Example {
         //These methods exists only in the HttpURLConnection class
         
         System.out.println("____________________________");
+        String requestMethod = httpCon.getRequestMethod();
         int responseCode = httpCon.getResponseCode();
         String responseMessage = httpCon.getResponseMessage();
         String contentType = httpCon.getContentType();
@@ -36,7 +37,8 @@ public class HttpURLConnection_Example {
         long date = httpCon.getDate();
         long expiration = httpCon.getExpiration();
         long lastModified = httpCon.getLastModified();
- 
+        
+        System.out.println("Request Method: "+requestMethod);
         System.out.println("Response Code: " + responseCode);
         System.out.println("Response Message: " + responseMessage);
         System.out.println("Content Type: " + contentType);
@@ -46,7 +48,25 @@ public class HttpURLConnection_Example {
         System.out.println("Expiration: " + new Date(expiration));
         System.out.println("Last Modified: " + new Date(lastModified));
         
-                   
+            try 
+        {
+            
+              
+            BufferedReader in = new BufferedReader(new InputStreamReader(httpCon.getInputStream()));
+            String str;
+            while ((str = in.readLine()) != null) 
+            {
+                System.out.println(str);
+            }
+           in.close();
+    }catch(MalformedURLException ex)
+    {
+        System.out.println("Wrong Format: "+ex.getMessage());
+    }
+    catch(IOException e)
+    {
+        System.out.println("Wrong Host name: "+ e.getMessage());
+    }          
         
         
         httpCon.disconnect(); 

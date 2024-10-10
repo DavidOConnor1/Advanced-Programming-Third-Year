@@ -20,10 +20,11 @@ public class URLConnection_Example {
 
     /**
      * @param args the command line arguments
+     * @throws java.io.IOException
      */
   public static void main(String[] args) throws IOException {
         // TODO code application logic here
-     String urlLink ="http://www.simplesite.com/us-123cafe";
+     String urlLink ="http://www.google.com";
      try 
     {    
       URL url = new URL( urlLink);

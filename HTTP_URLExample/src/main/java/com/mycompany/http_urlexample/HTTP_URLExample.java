@@ -20,7 +20,7 @@ public class HTTP_URLExample {
      */
     public static void main(String[] args) throws IOException {
         // TODO code application logic here
-         String urlLink ="http://www.simplesite.com/us-123cafe";
+         String urlLink ="http://www.google.com";
         try 
         {
             URL url = new URL( urlLink );
@@ -34,11 +34,11 @@ public class HTTP_URLExample {
            in.close();
     }catch(MalformedURLException ex)
     {
-        System.out.println(ex.getMessage());
+        System.out.println("Wrong Format: "+ex.getMessage());
     }
     catch(IOException e)
     {
-        System.out.println(e.getMessage());
+        System.out.println("Wrong Host name: "+ e.getMessage());
     }
         // add catch statements here
         
