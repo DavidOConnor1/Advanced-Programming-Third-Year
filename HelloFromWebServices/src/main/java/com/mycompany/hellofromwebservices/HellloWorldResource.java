@@ -46,7 +46,7 @@ public class HellloWorldResource {
     public String getText()
     {
         return "MY Hello World";
-        //throw new UnsupportedOperationException();
+        
     }
     
     @GET
